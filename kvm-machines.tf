@@ -3,11 +3,11 @@ terraform {
   required_providers {
     libvirt = {
       source  = "dmacvicar/libvirt"
-      version = "~> 0.7.6"
+      version = "~> 0.8.0"
     }
     ct = {
       source  = "poseidon/ct"
-      version = "~> 0.13.0"
+      version = "~> 0.14.0"
     }
     template = {
       source  = "hashicorp/template"
