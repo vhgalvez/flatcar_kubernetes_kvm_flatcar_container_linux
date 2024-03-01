@@ -16,14 +16,8 @@ terraform {
 # Define libvirt URI
 provider "libvirt" {
   uri = "qemu:///system"
-  #uri = "qemu+ssh://root@192.168.1.4/system"
 }
 
-#resource "libvirt_pool" "flatcar_storage_pool" {
-#  name = "${var.cluster_name}-pool"
-#  type = "dir"
-#  path = "/data/libvirt/${var.cluster_name}-pool"
-#}
 
 resource "libvirt_volume" "base" {
   name   = "flatcar-base"
@@ -34,7 +28,9 @@ resource "libvirt_volume" "base" {
 
 resource "libvirt_volume" "vm-disk" {
   for_each = toset(var.machines)
+
   # workaround: depend on libvirt_ignition.ignition[each.key], otherwise the VM will use the old disk when the user-data changes
+  
   name           = "${var.cluster_name}-${each.key}-${md5(libvirt_ignition.ignition[each.key].id)}.qcow2"
   base_volume_id = libvirt_volume.base.id
   pool           = var.storage_pool
