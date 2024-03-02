@@ -9,12 +9,13 @@ terraform {
       source  = "poseidon/ct"
       version = "~> 0.14.0"
     }
-    template = {
+     template = {
       source  = "hashicorp/template"
-      version = "~>  2.3.0"
+      version = "~> 2.2.0"
     }
   }
 }
+
 # Define libvirt URI
 provider "libvirt" {
   uri = "qemu:///system"
