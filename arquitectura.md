@@ -73,8 +73,11 @@
 ```bash
 sudo hostnamectl set-hostname server.cefas.com # Servidor Físico KVM
 sudo hostnamectl set-hostname ipa.cefasdns.com # mv Servidor DNS (FreeIPA)
-sudo hostnamectl set-hostname master01.k8s.cefas.com # Nodo Master de Kubernetes
-sudo hostnamectl set-hostname worker01.k8s.cefas.com # Nodos Worker de Kubernetes
-sudo hostnamectl set-hostname worker02.k8s.cefas.com # Nodos Worker de Kubernetes
-sudo hostnamectl set-hostname worker03.k8s.cefas.com # Nodos Worker de Kubernetes
+sudo hostnamectl set-hostname master01.cefasserver.com # Nodo Master de Kubernetes
+sudo hostnamectl set-hostname worker01.k8s.cefaserver.com # Nodos Worker de Kubernetes
+sudo hostnamectl set-hostname worker02.k8s.cefaserver.com # Nodos Worker de Kubernetes
+sudo hostnamectl set-hostname worker03.k8s.cefaserver.com # Nodos Worker de Kubernetes
 ```
+
+
+https://computingforgeeks.com/deploy-kubernetes-on-kvm-using-flatcar-container-linux/?utm_content=cmp-true
